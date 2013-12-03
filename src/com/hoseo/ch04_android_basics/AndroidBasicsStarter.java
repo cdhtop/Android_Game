@@ -9,23 +9,27 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class AndroidBasicsStarter extends ListActivity {
-	String tests[] = { "LifeCycleTest", "SingleTouchTest", "MultiTouchTest","BitmapTest" };
+	String tests[] = { "LifeCycleTest", "SingleTouchTest", "MultiTouchTest",
+			"KeyTest", "AccelerometerTest", "AssetsTest",
+			"ExternalStorageTest", "SoundPoolTest", "MediaPlayerTest",
+			"FullScreenTest", "RenderViewTest", "ShapeTest", "BitmapTest",
+			"FontTest", "SurfaceViewTest" };
 	
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_android_basics_starter);
-        setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tests));
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+//		setContentView(R.layout.activity_android_basics_starter);
+        setListAdapter( new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tests));
 
-
-    @Override
+	}
+	
+	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
 		String testName = tests[position];
 		
-		try {
+		try	{
 			Class clazz = Class.forName("com.hoseo.ch04_android_basics." + testName);
 			Intent intent = new Intent(this, clazz);
 			startActivity(intent);
@@ -34,12 +38,11 @@ public class AndroidBasicsStarter extends ListActivity {
 		}
 	}
 
-
 	@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.android_basics_starter, menu);
-        return true;
-    }
-    
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.android_basics_starter, menu);
+		return true;
+	}
+
 }

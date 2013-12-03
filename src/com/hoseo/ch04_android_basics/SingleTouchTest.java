@@ -12,7 +12,7 @@ public class SingleTouchTest extends Activity implements OnTouchListener {
 	StringBuilder builder = new StringBuilder();
 	TextView textView;
 	
-	public void onCreate(Bundle savedInstanceState)
+	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		textView = new TextView(this);
